@@ -1,2 +1,2 @@
-# pasantia
+# Pasantia
 pasantia MTech
