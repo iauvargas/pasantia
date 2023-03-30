@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function israel_module_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+
+    // Main module help for the block module.
+    case 'help.page.israel_module':
+      return '<p> Este es el hook_help de nuestro modulo DEMO. </p>';
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ *
+ * @param \Drupal\israel\NodeInterface $node
+ */
+function israel_module_node_update(\Drupal\node\NodeInterface $node) {
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * @param \Drupal\node\NodeInterface $node
+ */
+function israel_module_node_insert(\Drupal\node\NodeInterface $node) {
+
+}
+
+/**
+ * Implements hook_theme().
+ */
+function israel_module_theme($existing, $type, $theme, $path)
+{
+  return [
+    'demo_plantilla' => [
+      'variables' => [
+        'etiqueta' => NULL,
+        'tipo' => NULL,
+      ]
+    ]
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function israel_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  switch ($form_id) {
+    case 'israel_module_demo_form':
+      $form['checkbox']['#required'] = FALSE;
+      break;
+    case 'node_article_form':
+      break;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function israel_module_form_demo_module_demo_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  $form['checkbox']['#required'] = FALSE;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function israel_module_form_node_article_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+ t('This is the page of the form');
+}

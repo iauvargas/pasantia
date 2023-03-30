@@ -1,0 +1,9 @@
+name: 'Israel module'
+type: module
+core_version_requirement: ^9 || ^10
+
+description: 'Modulo del la Pagina.'
+version: 1.0.0
+package: 'Israel'
+dependencies:
+  - drupal:node

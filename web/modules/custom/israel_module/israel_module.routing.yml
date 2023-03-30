@@ -1,0 +1,20 @@
+israel_module.primera_ruta:
+  path: '/israel/controller/pagina/{node}'
+  defaults:
+    _controller: '\Drupal\israel_module\Controller\IsraelController::home'
+  requirements:
+    _permission: 'access content'
+
+israel_module.demo_form:
+  path: '/israel/form/demo'
+  defaults:
+    _form: '\Drupal\israel_module\Form\israelForm'
+  requirements:
+    _permission: 'curso permiso limitado'
+
+israel_module.ruta_con_formulario:
+  path: '/israel/controller/form'
+  defaults:
+    _controller: '\Drupal\israel_module\Controller\IsraelController::formController'
+  requirements:
+    _permission: 'access content'

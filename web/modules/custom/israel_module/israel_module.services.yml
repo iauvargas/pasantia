@@ -1,0 +1,4 @@
+services:
+  israel_module.repetir:
+    class: 'Drupal\israel_module\Services\Repetir'
+    arguments: ['@messenger', '@entity_type.manager']
